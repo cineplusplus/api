@@ -1,0 +1,14 @@
+node_modules
+
+.env
+
+dist
+
+build
+routes
+annotation
+
+files/*
+media
+
+mc.json

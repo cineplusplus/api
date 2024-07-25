@@ -1,0 +1,51 @@
+{
+  "name": "mcup-nodejs-backend",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "init": "npm install && npm run start",
+    "start": "npm run build && npm run start:prod",
+    "start:dev": "concurrently \"nodemon\" \"nodemon -x tsoa spec-and-routes\"",
+    "start:prod": "node ./build/root.js",
+    "start:test": "jest --detectOpenHandles",
+    "build": "npm run build:tsoa:routes && npm run build:tsoa:spec && tsc && tsc-alias",
+    "build:tsoa": "tsoa spec-and-routes",
+    "build:tsoa:routes": "tsoa routes",
+    "build:tsoa:spec": "tsoa spec"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@types/cors": "^2.8.17",
+    "@types/express": "^4.17.21",
+    "@types/jest": "^29.5.12",
+    "@types/node": "^20.14.11",
+    "@types/supertest": "^6.0.2",
+    "@types/swagger-ui-express": "^4.1.6",
+    "@typescript-eslint/eslint-plugin": "^7.16.1",
+    "@typescript-eslint/parser": "^7.16.1",
+    "concurrently": "^8.2.2",
+    "eslint": "^8.57.0",
+    "eslint-plugin-import": "^2.29.1",
+    "eslint-plugin-n": "^17.9.0",
+    "eslint-plugin-promise": "^6.5.1",
+    "jest": "^29.7.0",
+    "nodemon": "^3.1.4",
+    "supertest": "^7.0.0",
+    "ts-jest": "^29.2.3",
+    "ts-node": "^10.9.2",
+    "tsc-alias": "^1.8.10",
+    "tsconfig-paths": "^4.2.0",
+    "typescript": "^5.5.3"
+  },
+  "dependencies": {
+    "@ffmpeg-installer/ffmpeg": "^1.1.0",
+    "cors": "^2.8.5",
+    "express": "^4.19.2",
+    "node-media-server": "^2.7.0",
+    "swagger-ui-express": "^5.0.1",
+    "tsoa": "^6.4.0"
+  }
+}
